@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="485" pageHeight="220" columnWidth="485" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="36e4998b-e9b9-427b-ba9b-7cbd7e311d25">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="p1" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     totalcheck.`acc` AS totalcheck_acc,
+     totalcheck.`name` AS totalcheck_name,
+     totalcheck.`check_no` AS totalcheck_check_no,
+     totalcheck.`CheckW` AS totalcheck_check,
+     totalcheck.`date` AS totalcheck_date
+FROM
+     `totalcheck` totalcheck
+WHERE totalcheck.`CheckW`=$P{p1}]]>
+	</queryString>
+	<field name="totalcheck_acc" class="java.lang.String"/>
+	<field name="totalcheck_name" class="java.lang.String"/>
+	<field name="totalcheck_check_no" class="java.lang.String"/>
+	<field name="totalcheck_check" class="java.lang.String"/>
+	<field name="totalcheck_date" class="java.sql.Timestamp"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="220" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="485" height="220" uuid="b78f0cb3-9282-4507-908f-a9a071dab479"/>
+				<imageExpression><![CDATA["C:\\Users\\Lenovo X1 Carbon\\Desktop\\RHM_BANK 1.0\\web\\resources\\rhm.jpg"]]></imageExpression>
+			</image>
+			<componentElement>
+				<reportElement x="5" y="199" width="200" height="18" forecolor="#99FF99" backcolor="#CCFF33" uuid="89857935-333b-4c35-8486-1fc86437c0f7"/>
+				<jr:barbecue xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" type="Code128" drawText="false" checksumRequired="false">
+					<jr:codeExpression><![CDATA[$F{totalcheck_check}]]></jr:codeExpression>
+				</jr:barbecue>
+			</componentElement>
+			<textField>
+				<reportElement x="27" y="169" width="100" height="20" uuid="58a07f92-b62f-4617-8a5d-cad6849f0141"/>
+				<textFieldExpression><![CDATA[$F{totalcheck_acc}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="26" y="154" width="100" height="20" uuid="6a593112-bc42-48e1-9435-5e8d3f9a38d7"/>
+				<textFieldExpression><![CDATA[$F{totalcheck_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="229" y="197" width="256" height="20" uuid="c31c4ceb-8dbe-4f3e-a38b-1c4d6cc85d5f"/>
+				<textFieldExpression><![CDATA[$F{totalcheck_check}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+</jasperReport>

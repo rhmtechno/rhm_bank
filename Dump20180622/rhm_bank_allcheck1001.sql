@@ -1,0 +1,54 @@
+-- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
+--
+-- Host: localhost    Database: rhm_bank
+-- ------------------------------------------------------
+-- Server version	5.7.20-log
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `allcheck1001`
+--
+
+DROP TABLE IF EXISTS `allcheck1001`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `allcheck1001` (
+  `acc` varchar(45) NOT NULL,
+  `check_no` varchar(45) NOT NULL,
+  `check` varchar(45) NOT NULL,
+  `date` datetime DEFAULT NULL,
+  KEY `acc` (`acc`),
+  CONSTRAINT `allcheck1001_ibfk_1` FOREIGN KEY (`acc`) REFERENCES `accounts` (`acc`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `allcheck1001`
+--
+
+LOCK TABLES `allcheck1001` WRITE;
+/*!40000 ALTER TABLE `allcheck1001` DISABLE KEYS */;
+INSERT INTO `allcheck1001` VALUES ('1001','1001','sadek1001','2018-06-17 17:54:51'),('1001','1002','sadek1002','2018-06-17 17:54:51'),('1001','1003','sadek1003','2018-06-17 17:54:51'),('1001','1004','sadek1004','2018-06-17 17:54:51'),('1001','1005','sadek1005','2018-06-17 17:54:51'),('1001','1006','sadek1006','2018-06-17 17:54:51'),('1001','1007','sadek1007','2018-06-17 17:54:51'),('1001','1008','sadek1008','2018-06-17 17:54:51'),('1001','1009','sadek1009','2018-06-17 17:54:52'),('1001','1010','sadek1010','2018-06-17 17:54:52'),('1001','1011','sadek1011','2018-06-17 17:54:52'),('1001','1012','sadek1012','2018-06-17 17:54:52'),('1001','1013','sadek1013','2018-06-17 17:54:52'),('1001','1014','sadek1014','2018-06-17 17:55:59'),('1001','1015','sadek1015','2018-06-17 17:55:59'),('1001','1016','sadek1016','2018-06-17 17:57:14'),('1001','1017','sadek1017','2018-06-17 17:57:14'),('1001','1018','sadek1018','2018-06-17 17:57:14'),('1001','1019','sadek1019','2018-06-17 17:57:14'),('1001','1020','sadek1020','2018-06-17 17:57:14'),('1001','1021','sadek1021','2018-06-17 17:58:24'),('1001','1022','sadek1022','2018-06-17 17:58:28'),('1001','1023','sadek1023','2018-06-17 17:58:29'),('1001','1024','sadek1024','2018-06-17 17:58:29'),('1001','1025','sadek1025','2018-06-17 17:58:30'),('1001','1026','sadek1026','2018-06-17 17:58:30'),('1001','1027','sadek1027','2018-06-17 17:58:30'),('1001','1028','sadek1028','2018-06-17 17:58:31'),('1001','1029','sadek1029','2018-06-17 17:58:31'),('1001','1030','sadek1030','2018-06-17 17:58:31');
+/*!40000 ALTER TABLE `allcheck1001` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2018-06-22 22:38:56
